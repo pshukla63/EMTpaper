@@ -363,13 +363,13 @@ wUCSCorrTable <- grid.table(wUCSCorr, rows = NULL)
 ####################
 
 # HNSC Single Cell Data
-gsvaHNSC <- read.table("Data/results/hnsc/gsva_hnscSC_emt_scores.tsv", sep = "\t", stringsAsFactors = FALSE,
+gsvaHNSC <- read.table("gsva_hnscSC_emt_scores.tsv", sep = "\t", stringsAsFactors = FALSE,
                        header = TRUE)
-singscoreHNSC <- read.table("Data/results/hnsc/singscore_hnscSC_emt_scores.tsv", sep = "\t", stringsAsFactors = FALSE,
+singscoreHNSC <- read.table("singscore_hnscSC_emt_scores.tsv", sep = "\t", stringsAsFactors = FALSE,
                        header = TRUE)
-ssgseaHNSC <- read.table("Data/results/hnsc/ssgsea_hnscSC_emt_scores.tsv", sep = "\t", stringsAsFactors = FALSE,
+ssgseaHNSC <- read.table("ssgsea_hnscSC_emt_scores.tsv", sep = "\t", stringsAsFactors = FALSE,
                        header = TRUE)
-sspathsHNSC <- read.table("Data/results/hnsc/sspaths_hnscSC_emt_scores_runABS.tsv", sep = "\t", stringsAsFactors = FALSE,
+sspathsHNSC <- read.table("sspaths_hnscSC_emt_scores_runABS.tsv", sep = "\t", stringsAsFactors = FALSE,
                        header = TRUE)
 # Applying a function that formats the dataframes for plotting. Details in emtPaperFunctions.R
 gsvaHNSC <- hnscEData(gsvaHNSC, "GSVA")
@@ -487,7 +487,7 @@ ggplot(selectedSampDF, aes(x = Method, y = Scaled_emt, color = Condition, fill =
  
 # Timeline Data
 # Timeline expression data
-timelineExpr <- read.table("Data/reference_data/GSE125365_Timeline_new.tsv", header = TRUE, sep = "\t",
+timelineExpr <- read.table("GSE125365_Timeline_new.tsv", header = TRUE, sep = "\t",
                        stringsAsFactors = FALSE)
 # Selecting for 267 genes (includes lowly expressed genes)
 geneIDs <- read.table("All_EMT_HGNC_Ensembl ID.csv", header = TRUE, stringsAsFactors = FALSE,
@@ -498,13 +498,13 @@ timelineExpr <- timelineExpr[, c("sample_id", emtGenes)]
 timelineExpr[, 2:ncol(timelineExpr)] <- t(scale(t(timelineExpr[, 2:ncol(timelineExpr)])))
 
 # Timeline scores
-timelineGsva <- read.table("Data/results/time_series/gsva_timeSeries_emt_scores.tsv", header = TRUE, sep = "\t",
+timelineGsva <- read.table("gsva_timeSeries_emt_scores.tsv", header = TRUE, sep = "\t",
                            stringsAsFactors = FALSE)
-timelineSingscore <- read.table("Data/results/time_series/singscore_timeSeries_emt_scores.tsv", header = TRUE, sep = "\t",
+timelineSingscore <- read.table("singscore_timeSeries_emt_scores.tsv", header = TRUE, sep = "\t",
                            stringsAsFactors = FALSE)
-timelineSsgsea <- read.table("Data/results/time_series/ssgsea_timeSeries_emt_scores.tsv", header = TRUE, sep = "\t",
+timelineSsgsea <- read.table("ssgsea_timeSeries_emt_scores.tsv", header = TRUE, sep = "\t",
                            stringsAsFactors = FALSE)
-timelineSspaths <- read.table("Data/results/time_series/sspaths_timeSeries_emt_scores_runABS.tsv", header = TRUE, sep = "\t",
+timelineSspaths <- read.table("sspaths_timeSeries_emt_scores_runABS.tsv", header = TRUE, sep = "\t",
                            stringsAsFactors = FALSE)
 
 # Boxplots for visualization
