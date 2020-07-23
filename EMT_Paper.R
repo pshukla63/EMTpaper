@@ -2,8 +2,6 @@
 ### EMT PAPER ###
 #################
 
-
-setwd("C:/Users/prach/Desktop/EMT Paper")
   
 # Loading libraries
   library(dplyr)
@@ -16,7 +14,7 @@ setwd("C:/Users/prach/Desktop/EMT Paper")
   library(openxlsx)
   
 # Loading functions
-source("Github Repository/emtPaperFunctions.R")
+source("emtPaperFunctions.R")
 
 
 # Phenotype designations table by study for TCGA and GTEx
