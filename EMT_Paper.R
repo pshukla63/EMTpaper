@@ -18,7 +18,7 @@ source("emtPaperFunctions.R")
 
 
 # Phenotype designations table by study for TCGA and GTEx
-abbreviationsTable <- read.table("Supplementary Tables/study_abbreviations.csv", sep = ",", stringsAsFactors = FALSE, 
+abbreviationsTable <- read.table("study_abbreviations.csv", sep = ",", stringsAsFactors = FALSE, 
                                  header = TRUE)
 # pdf("Final Figures/abbreviations_table.pdf", width = 10, height = 15.5)
 abbTable <- grid.table(abbreviationsTable, rows = NULL)
